@@ -2,7 +2,7 @@
 
 # LASER
 
-[![Conference](https://img.shields.io/badge/NeurIPS-Accepted-success)](https://mit-realm.github.io/laser/)
+[![Conference](https://img.shields.io/badge/NeurIPS-Accepted-success)](https://mit-realm.github.io/laser/) [![Project website](https://img.shields.io/badge/Project-Website-blue)](https://mit-realm.github.io/laser/)
 
 **Latent Space Adjoint Matching for Support-Constrained Entropy-Regularized Offline RL**
 
@@ -14,8 +14,6 @@ Official JAX implementation.
 [Matthew Cleaveland](https://www.linkedin.com/in/matthew-cleaveland-4775abba/),
 [Peter Crowley-Dolen](https://www.linkedin.com/in/peter-crowley2/?isSelfProfile=false), and
 [Chuchu Fan](https://chuchu.mit.edu/)
-
-[Project website](https://mit-realm.github.io/laser/)
 
 [Dependencies](#dependencies) •
 [Installation](#installation) •
