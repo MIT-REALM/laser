@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=78.1.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "laser"
+version = "0.0.0"
+description = "JAX implementation of LASER for offline reinforcement learning"
+requires-python = ">=3.11"
+dependencies = [
+    "cyclopts>=3.22.5",
+    "distrax>=0.1.7",
+    "flax>=0.11.1",
+    "gymnasium>=1.2.0",
+    "jax>=0.7.0",
+    "jaxtyping>=0.3.2",
+    "numpy>=2.2.6",
+    "ogbench>=1.1.5",
+    "opencv-python>=4.12.0.88",
+    "optax>=0.2.5",
+    "pyyaml>=6.0.2",
+    "scipy>=1.16.1",
+    "tqdm>=4.67.1",
+    "wandb>=0.21.1",
+]
+
+[project.optional-dependencies]
+cuda12 = ["jax[cuda12]>=0.7.0"]
+
+[tool.setuptools.packages.find]
+include = ["laser*"]
