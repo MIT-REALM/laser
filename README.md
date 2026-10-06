@@ -2,7 +2,7 @@
 
 # LASER
 
-[![Conference](https://img.shields.io/badge/NeurIPS-Accepted-success)](https://mit-realm.github.io/laser/) [![Project website](https://img.shields.io/badge/Project-Website-blue)](https://mit-realm.github.io/laser/)
+[![Conference](https://img.shields.io/badge/NeurIPS-Accepted-success)](https://openreview.net/forum?id=n2D2Gf0jYw) [![Project website](https://img.shields.io/badge/Project-Website-blue)](https://mit-realm.github.io/laser/)
 
 **Latent Space Adjoint Matching for Support-Constrained Entropy-Regularized Offline RL**
 
