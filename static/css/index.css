@@ -94,6 +94,9 @@ code{font-family:"DejaVu Sans Mono",Consolas,monospace;font-size:.86em;overflow-
 .abstract-content{max-width:870px}
 .abstract-content h2{text-align:center}
 .abstract-content p{line-height:1.85;text-align:justify;hyphens:auto}
+#bibtex.container{max-width:1200px}
+#bibtex pre{white-space:pre-wrap;overflow-wrap:anywhere}
+#bibtex pre code{overflow-wrap:anywhere}
 .citation-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px}
 .citation-heading h2{margin:0}
 .copy-button{background:white;border:1px solid #ccc;border-radius:6px;font-size:13px;padding:9px 14px;min-width:116px;color:var(--ink)}
