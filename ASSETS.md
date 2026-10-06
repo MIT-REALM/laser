@@ -21,7 +21,7 @@ The title, author order, affiliations, venue, abstract, and numerical results fo
 
 ## Design and fonts
 
-The HTML, CSS, JavaScript, and favicon are written for LASER. The visual structure follows the user's ReFORM, Def-MARL, DGPPO, and GCBF+ sites, which credit the Nerfies project-page template. No prior project's results or videos are reused.
+The HTML, CSS, and JavaScript are written for LASER. The REALM favicon (`static/images/favicon.svg` and `favicon.png`) is reused unchanged from the ReFORM project website; the same assets are also used by DGPPO. The visual structure follows the user's ReFORM, Def-MARL, DGPPO, and GCBF+ sites, which credit the Nerfies project-page template. No prior project's results or videos are reused.
 
 Noto Sans Regular and Bold are subsetted from the local `fonts-noto-core` package into WOFF2 for offline use. See `static/fonts/LICENSE.txt` for the font license. The subset covers the site's text, Latin, Greek, and mathematical symbols where supported by the source font; remaining mathematical glyphs use system fallbacks.
 
