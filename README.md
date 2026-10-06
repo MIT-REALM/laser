@@ -13,22 +13,23 @@ Open <http://127.0.0.1:8000>. There is no build step or package installation. Fo
 
 ## Files
 
-- `index.html`: paper information, overview, method, experiments, ablations, abstract, and citation.
+- `index.html`: paper information, overview, method, experiments, ablations, abstract, related work, and citation.
 - `static/css/index.css`: responsive layout, following the group's ReFORM, Def-MARL, DGPPO, and GCBF+ project-page style.
 - `static/js/index.js`: accessible figure enlargement, citation copying, research-menu dismissal, and motion-aware demo playback. The page and image links also work without JavaScript.
 - `media/laser.pdf`: copy of the current manuscript's `camera_ready.pdf`.
 - `media/*.png`: figures rendered directly from the manuscript PDFs; see `ASSETS.md`.
+- `media/latent-target.svg` and `.tex`: LaTeX-rendered target distribution equation and its editable source.
 - `media/videos/`: four LASER MP4 rollouts and their poster frames, with source details in `ASSETS.md`.
 
 The intended project URL is <https://mit-realm.github.io/laser/>. All local links are relative so the page works both at a server root and under `/laser/`. `.nojekyll` allows direct static serving by GitHub Pages.
 
 ## Updating content
 
-Replace `media/laser.pdf` and the corresponding images when the paper changes. Update the text, summary numbers, metadata, and BibTeX in `index.html` together. The current Paper button links to the local PDF; a confirmed arXiv or OpenReview URL can be substituted later. The Code button points to the repository and does not imply that the code has been released.
+Replace `media/laser.pdf` and the corresponding images when the paper changes. Update the text, summary numbers, metadata, and BibTeX in `index.html` together. All LASER paper links point to the [OpenReview PDF](https://openreview.net/pdf?id=n2D2Gf0jYw). The bundled PDF is retained as a local manuscript snapshot. The Code button points to the repository and does not imply that the code has been released.
 
 The teaser gallery contains LASER rollouts for AntMaze-large, Cube-single, Cube-double, and Scene. Videos loop silently with native playback and fullscreen controls. Autoplay is disabled for visitors who prefer reduced motion; without JavaScript, visitors can start playback using the controls. The gallery uses four columns on desktop, two on tablets, and one on phones.
 
-The existing repository remote is preserved. This website was prepared locally without pushing or enabling hosting.
+Publish the `website` branch through GitHub Pages when hosting is configured.
 
 ## Validation
 

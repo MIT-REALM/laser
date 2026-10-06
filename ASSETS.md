@@ -39,3 +39,20 @@ Source: `/home/songyuan/Documents/Code/laser/media`, supplied by the user. The M
 | `media/videos/scene.mp4` | `scene.mp4` | 5.534 s |
 
 Each video has a same-stem `.jpg` poster in `media/videos/`. These are illustrative policy rollouts; no seed, task number, dataset quality, or playback-speed claims are inferred from the filenames.
+
+## Target latent distribution equation
+
+`media/latent-target.svg` is typeset from `media/latent-target.tex`, matching equation (13) in `camera_ready.tex`: the same Computer Modern math, Times roman text, Helvetica sans-serif latent-space labels, and full critic notation. It omits only the manuscript equation number and trailing prose comma. The SVG contains vector glyph paths, so it stays sharp without external fonts or a JavaScript math renderer. The HTML provides an accessible text alternative.
+
+To regenerate, run `latex -interaction=nonstopmode -halt-on-error latent-target.tex` and `dvisvgm --no-fonts --exact --bbox=min --output=latent-target.svg latent-target.dvi` in a temporary directory containing the `.tex` file, then copy the SVG into `media/`.
+
+## Baseline papers and related work
+
+Baseline links follow the manuscript citations and the authors' project pages:
+
+- ReFORM: [paper](https://openreview.net/forum?id=YvFsyRReeN), linked from the [ReFORM project page](https://mit-realm.github.io/reform/).
+- DSRL: [Steering Your Diffusion Policy with Latent Space Reinforcement Learning](https://arxiv.org/abs/2506.15799).
+- FQL and IFQL: [Flow Q-Learning](https://arxiv.org/abs/2502.02538), linked from the [FQL project page](https://seohong.me/projects/fql/). IFQL is presented in the same paper.
+- QAM and QAM-E: [Q-learning with Adjoint Matching](https://arxiv.org/abs/2601.14234), linked from the [QAM project page](https://colinqiyangli.github.io/qam/). QAM-E is a variant in the same paper.
+
+The Related Work section follows the supplied screenshot's simple heading-and-prose layout. Its ReFORM summary follows the project page's bounded latent-noise and reflected-flow formulation and refers specifically to learned support.

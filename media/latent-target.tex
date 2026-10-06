@@ -1,0 +1,16 @@
+% LASER website equation, matching camera_ready.tex equation (13).
+% Build: latex -interaction=nonstopmode -halt-on-error latent-target.tex
+% Then: dvisvgm --no-fonts --exact --bbox=min --output=latent-target.svg latent-target.dvi
+\documentclass[border=2pt]{standalone}
+\usepackage[T1]{fontenc}
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\sfdefault}{phv}
+\usepackage{amsmath,amssymb}
+\newcommand{\LatentPolicy}{\pi_\textsf{L}}
+\newcommand{\LatentUniform}{q_\textsf{L}^\mathrm{unif}}
+\begin{document}
+$\displaystyle
+\LatentPolicy{}^\star(\cdot|s) \propto
+\LatentUniform{}(\cdot)\exp\left( Q^{\LatentPolicy{}}_\phi(s, \cdot) / \alpha \right)
+$
+\end{document}

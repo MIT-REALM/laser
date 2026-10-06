@@ -26,10 +26,7 @@
     <details class="research-menu">
       <summary>More Research <span aria-hidden="true">⌄</span></summary>
       <div class="research-links">
-        <a href="https://mit-realm.github.io/reform/">ReFORM</a>
-        <a href="https://mit-realm.github.io/def-marl/">Def-MARL</a>
-        <a href="https://mit-realm.github.io/dgppo/">DGPPO</a>
-        <a href="https://mit-realm.github.io/gcbfplus/">GCBF+</a>
+        <a href="https://mit-realm.github.io/reform/">ReFORM: Reflected Flows for On-support Offline RL via Noise Manipulation</a>
         <a href="https://realm.mit.edu/">MIT REALM</a>
       </div>
     </details>
@@ -37,20 +34,20 @@
 
   <main id="main">
     <header class="publication-header container">
-      <h1><span class="method-name">LASER</span>: Latent Space Adjoint Matching for Support-Constrained Entropy-Regularized Offline RL</h1>
+      <h1><span class="title-line"><span class="method-name">LASER</span>: Latent Space Adjoint Matching for</span>
+        <span class="title-line">Support-Constrained Entropy-Regularized Offline RL</span></h1>
       <p class="venue">NeurIPS 2026</p>
       <div class="authors">
         <span><a href="https://syzhang092218-source.github.io/">Songyuan Zhang</a><sup>1</sup>,</span>
         <span><a href="https://oswinso.xyz/">Oswin So</a><sup>1</sup>,</span>
         <span><a href="https://ericyangyu.github.io/">Eric Yang Yu</a><sup>1</sup>,</span>
-        <br class="author-break">
         <span><a href="https://www.linkedin.com/in/matthew-cleaveland-4775abba/">Matthew Cleaveland</a><sup>2</sup>,</span>
-        <span>Peter Crowley-Dolen<sup>2</sup>,</span>
+        <span><a href="https://www.linkedin.com/in/peter-crowley2/?isSelfProfile=false">Peter Crowley-Dolen</a><sup>2</sup>,</span>
         <span><a href="http://chuchu.mit.edu/">Chuchu Fan</a><sup>1</sup></span>
       </div>
       <p class="affiliations"><span><sup>1</sup>Massachusetts Institute of Technology</span><span><sup>2</sup>MIT Lincoln Laboratory</span></p>
       <div class="publication-links">
-        <a class="pill" href="media/laser.pdf">
+        <a class="pill" href="https://openreview.net/pdf?id=n2D2Gf0jYw">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6zM14 3v5h4M9 12h6M9 16h6"/></svg>Paper
         </a>
         <a class="pill" href="https://github.com/MIT-REALM/laser">
@@ -63,7 +60,7 @@
     </header>
 
     <section class="teaser container" aria-labelledby="teaser-title">
-      <h2 id="teaser-title">Expressive offline RL with <span class="blue">support constraints</span><br class="desktop-break"> and <span class="purple">explicit entropy regularization</span>.</h2>
+      <h2 id="teaser-title">Expressive offline RL with <span class="blue">support constraints</span> and <span class="purple">explicit entropy regularization</span><br class="desktop-break"> using latent space adjoint matching.</h2>
       <div id="demos" class="demo-gallery" role="group" aria-label="LASER policy demonstrations">
         <figure class="demo-video">
           <video width="720" height="480" controls muted loop playsinline preload="metadata" poster="media/videos/antmaze-large.jpg" aria-labelledby="demo-antmaze-large">
@@ -100,18 +97,18 @@
           <img width="1800" height="515" src="media/motivation.png" alt="Reach-avoid comparison: dataset trajectories go around a wall; removing support constraints leads to out-of-distribution failures; removing entropy regularization gets agents stuck; LASER reaches the goal." fetchpriority="high">
           <span class="zoom-hint" aria-hidden="true">↗ Enlarge</span>
         </a>
-        <figcaption><strong>Staying in support is only part of the story.</strong> Entropy regularization helps avoid brittle policies and artifacts in the learned critic. LASER combines both ingredients in an expressive latent flow policy.</figcaption>
+        <figcaption><strong>Staying in support</strong> is only part of the story. <strong>Entropy regularization</strong> helps avoid brittle policies and artifacts in the learned critic. LASER combines both ingredients in an expressive latent flow policy.</figcaption>
       </figure>
       <nav class="section-links" aria-label="On this page">
-        <a href="#demos">Videos</a><a href="#overview">Overview</a><a href="#method">Method</a><a href="#results">Results</a><a href="#ablations">Ablations</a><a href="#abstract">Abstract</a>
+        <a href="#demos">Videos</a><a href="#overview">Overview</a><a href="#method">Method</a><a href="#results">Results</a><a href="#ablations">Ablations</a><a href="#abstract">Abstract</a><a href="#related-work">Related Work</a>
       </nav>
     </section>
 
     <section id="overview" class="section container">
       <h2>Overview</h2>
-      <p>Offline reinforcement learning learns from a fixed dataset. A policy must improve on the behavior in that data while avoiding out-of-distribution actions. Constraining the policy to a learned latent support helps, but directly maximizing the critic can still cause mode collapse.</p>
+      <p>Offline reinforcement learning learns from a fixed dataset. A policy must improve on the behavior in that dataset while avoiding out-of-distribution actions. Constraining the policy to a learned latent support helps, but directly maximizing the critic can still cause mode collapse.</p>
       <ul class="overview-list">
-        <li><strong>Keep actions within the learned support.</strong> A behavior-cloning flow decoder maps a bounded latent space to the dataset's action distribution.</li>
+        <li><strong>Keep actions within the learned support.</strong> A behavior-cloning flow decoder maps a bounded latent space to the dataset's action distribution. We optimize the latent distribution while keeping the support to maintain support constraints.</li>
         <li><strong>Retain diverse, high-value actions.</strong> An expressive latent flow policy uses explicit entropy regularization to balance value maximization with policy diversity.</li>
         <li><strong>Train efficiently with adjoint matching.</strong> LASER optimizes the entropy-regularized latent policy without backpropagating through its flow trajectory.</li>
       </ul>
@@ -140,13 +137,13 @@
       </div>
       <div class="equation-block">
         <p class="equation-label">The target latent distribution, for a fixed state, critic, and decoder</p>
-        <p class="equation" aria-label="The optimal latent policy is proportional to the uniform latent density times the exponential of latent Q divided by alpha">π<sub>L</sub><sup>⋆</sup>(z | s) ∝ q<sub>L</sub><sup>unif</sup>(z) exp(Q<sub>L</sub>(s, z) / α)</p>
-        <p>The temperature α controls the balance between value and entropy; the uniform reference defines the permitted latent support.</p>
+        <p class="equation"><img src="media/latent-target.svg" width="606" height="72" alt="π_L^⋆(·|s) ∝ q_L^unif(·) exp(Q_φ^{π_L}(s, ·) / α): the optimal latent policy is proportional to the uniform latent density times the exponential of the critic divided by temperature alpha."></p>
+        <p>The temperature α controls the balance between value and entropy. The uniform reference defines the permitted latent support.</p>
       </div>
-      <p class="small-note">In practice, LASER projects numerical latent outputs onto the bounded ball before decoding. Action-space support depends on how faithfully the learned decoder captures behavior support. Adjoint matching avoids BPTT through the latent flow; terminal critic gradients still differentiate through the decoder.</p>
+      <p class="small-note">In practice, LASER projects numerical latent outputs onto the bounded ball before decoding. Action-space support depends on how faithfully the learned decoder captures behavior support. Adjoint matching avoids BPTT through the latent flow.</p>
 
       <h3 class="subsection-title">Why an expressive flow policy?</h3>
-      <p>A Gaussian latent policy is simple, but limits expressiveness. In the paper's illustrative comparison, the flow policy achieves a stronger tradeoff between entropy and expected value.</p>
+      <p>A Gaussian latent policy is simple, but limits expressiveness. In our illustrative comparison, the flow policy achieves a stronger tradeoff between entropy and expected value.</p>
       <figure>
         <div class="tradeoff-grid">
           <a class="figure-link" href="media/entropy-tradeoff.png" data-zoom aria-label="Enlarge the latent-policy distribution comparison"><img width="1400" height="680" src="media/entropy-tradeoff.png" alt="Distributions produced by Gaussian and flow latent policies at different entropy levels." loading="lazy"><span class="zoom-hint" aria-hidden="true">↗ Enlarge</span></a>
@@ -156,7 +153,7 @@
       </figure>
     </section>
 
-    <section id="results" class="section section-tinted">
+    <section id="results" class="section">
       <div class="container">
         <h2>Experiments</h2>
         <p>We evaluate LASER on <a href="https://seohong.me/projects/ogbench/">OGBench</a>, spanning locomotion and manipulation. Four environments × five tasks × two dataset qualities give <strong>40 evaluation settings</strong>, each run with three training seeds.</p>
@@ -166,7 +163,7 @@
           <div><h3>Cube-double</h3><p>Two-object manipulation</p></div>
           <div><h3>Scene</h3><p>Multi-object manipulation</p></div>
         </div>
-        <p>We compare with <strong>ReFORM, DSRL, FQL, IFQL, QAM, and QAM-E</strong> on both clean and noisy datasets. LASER uses one set of method-specific hyperparameters across tasks; action chunk lengths and pessimistic backup weights depend on the environment and are shared across methods.</p>
+        <p>We compare with <strong><a href="https://openreview.net/forum?id=YvFsyRReeN" title="ReFORM: Reflected Flows for On-support Offline RL via Noise Manipulation">ReFORM</a>, <a href="https://arxiv.org/abs/2506.15799" title="Steering Your Diffusion Policy with Latent Space Reinforcement Learning">DSRL</a>, <a href="https://arxiv.org/abs/2502.02538" title="Flow Q-Learning">FQL</a>, <a href="https://arxiv.org/abs/2502.02538" title="Flow Q-Learning">IFQL</a>, <a href="https://arxiv.org/abs/2601.14234" title="Q-learning with Adjoint Matching">QAM</a>, and <a href="https://arxiv.org/abs/2601.14234" title="Q-learning with Adjoint Matching">QAM-E</a></strong> on both clean and noisy datasets. LASER uses one set of method-specific hyperparameters across tasks; action chunk lengths and pessimistic backup weights depend on the environment and are shared across methods.</p>
         <h3 class="subsection-title">Strong performance across dataset qualities</h3>
         <figure>
           <a class="figure-link" href="media/performance.png" data-zoom aria-label="Enlarge the clean and noisy performance profiles">
@@ -186,7 +183,7 @@
         <figure>
           <h3>Entropy strength</h3>
           <a class="figure-link" href="media/ablation-temperature.png" data-zoom aria-label="Enlarge the inverse-temperature ablation"><img width="1100" height="806" src="media/ablation-temperature.png" alt="Training curves comparing inverse temperatures 3, 5, 10, 20, and 30." loading="lazy"><span class="zoom-hint" aria-hidden="true">↗ Enlarge</span></a>
-          <figcaption>Moderate inverse temperatures, 1/α ∈ [5, 20], produce comparable results in this ablation. The default is 1/α = 10.</figcaption>
+          <figcaption>Moderate inverse temperatures, 1/α ∈ [5, 20], produce comparable results in this ablation. The default is 1/α = 10 for all environments.</figcaption>
         </figure>
         <figure>
           <h3>Adjoint matching</h3>
@@ -200,7 +197,7 @@
         </figure>
       </div>
       <p class="small-note">Lines show mean success rates; shading spans the minimum and maximum across runs.</p>
-      <p class="paper-prompt">See the <a href="media/laser.pdf">paper and appendix</a> for proofs, implementation details, additional ablations, and the harder Puzzle-4×4 evaluation.</p>
+      <p class="paper-prompt">See the <a href="https://openreview.net/pdf?id=n2D2Gf0jYw">paper and appendix</a> for proofs, implementation details, additional ablations, and the harder Puzzle-4×4 evaluation.</p>
     </section>
 
     <section id="abstract" class="section section-tinted">
@@ -208,6 +205,14 @@
         <h2>Abstract</h2>
         <p>While offline reinforcement learning (RL) enables policy optimization from static datasets without costly online interaction, it remains bottlenecked by the risk of executing out-of-distribution (OOD) actions. Recent approaches mitigate this by learning a behavior-cloning policy through flow matching and then performing RL within its constrained latent space. However, naïvely optimizing the latent policy can easily cause the policy to collapse into a brittle mode or exploit sharp artifacts of the learned critic. In this work, we find that entropy regularization is essential in latent-space RL for addressing these challenges. We introduce LASER, a novel offline RL algorithm that applies latent-space adjoint matching to achieve entropy-regularized latent-space RL with expressive flow policies while avoiding backpropagation through time. Through comprehensive experiments on 40 challenging OGBench tasks with varying dataset qualities, we show that LASER achieves state-of-the-art performance. Notably, LASER uses fixed method-specific hyperparameters across all tasks and outperforms the evaluated baselines, including those with task- and dataset-specific tuning, which highlights the robust applicability of LASER.</p>
       </div>
+    </section>
+
+    <section id="related-work" class="section container" aria-labelledby="related-work-title">
+      <h2 id="related-work-title">Related Work</h2>
+      <p>This work is part of our research on expressive, support-constrained policies for offline reinforcement learning.</p>
+      <p><a href="https://openreview.net/forum?id=YvFsyRReeN">ReFORM: Reflected Flows for On-support Offline RL via Noise Manipulation</a><br>
+        ReFORM uses reflected flows to optimize bounded latent noise for a learned behavior-cloning policy while preserving its learned support.</p>
+      <p>For demonstrations and implementation details, see the <a href="https://mit-realm.github.io/reform/">ReFORM project page</a>.</p>
     </section>
 
     <section id="bibtex" class="section container">
@@ -218,8 +223,7 @@
   author={Zhang, Songyuan and So, Oswin and Yu, Eric Yang and
           Cleaveland, Matthew and Crowley-Dolen, Peter and Fan, Chuchu},
   booktitle={Advances in Neural Information Processing Systems},
-  year={2026},
-  url={https://mit-realm.github.io/laser/}
+  year={2026}
 }</code></pre>
       <p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
     </section>

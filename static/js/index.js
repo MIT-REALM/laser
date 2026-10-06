@@ -12,7 +12,7 @@ if (figureDialog && typeof figureDialog.showModal === 'function') {
       const source = link.querySelector('img');
       dialogImage.src = link.href;
       dialogImage.alt = source.alt;
-      dialogTitle.textContent = link.getAttribute('aria-label').replace(/^Enlarge /, '');
+      dialogTitle.textContent = link.getAttribute('aria-label');
       figureDialog.showModal();
       figureDialog.scrollTop = 0;
       figureDialog.scrollLeft = 0;
