@@ -58,3 +58,22 @@ document.addEventListener('keydown', event => {
     researchMenu.querySelector('summary').focus();
   }
 });
+
+// Match the earlier project pages' muted, looping demos while respecting reduced motion.
+// With JavaScript disabled, native controls and poster images still work.
+const demoVideos = document.querySelectorAll('.demo-gallery video');
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+function updateDemoPlayback() {
+  demoVideos.forEach(video => {
+    video.autoplay = !reducedMotion.matches;
+    if (reducedMotion.matches) {
+      video.pause();
+    } else {
+      video.muted = true;
+      // Autoplay may be blocked by the browser; native controls remain available.
+      video.play().catch(() => {});
+    }
+  });
+}
+updateDemoPlayback();
+reducedMotion.addEventListener('change', updateDemoPlayback);

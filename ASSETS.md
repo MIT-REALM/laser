@@ -26,3 +26,16 @@ The HTML, CSS, JavaScript, and favicon are written for LASER. The visual structu
 Noto Sans Regular and Bold are subsetted from the local `fonts-noto-core` package into WOFF2 for offline use. See `static/fonts/LICENSE.txt` for the font license. The subset covers the site's text, Latin, Greek, and mathematical symbols where supported by the source font; remaining mathematical glyphs use system fallbacks.
 
 Manuscript PDF SHA-256: `31a5c89d2f33cb46a7db5a0f10040ddda9434d71fd394c38e4724e8c61e1ab1d`.
+
+## LASER rollout videos (added 2026-10-06)
+
+Source: `/home/songyuan/Documents/Code/laser/media`, supplied by the user. The MP4 files are copied unchanged; all are 720 × 480, 30 fps, H.264 with yuv420p pixel format and no audio stream. The GIF duplicates are omitted to keep the page lightweight. Poster JPEGs are frames extracted at 0.5 seconds with FFmpeg.
+
+| Website video | Source filename | Duration |
+| --- | --- | --- |
+| `media/videos/antmaze-large.mp4` | `antmaze-large.mp4` | 17.8 s |
+| `media/videos/cube-single.mp4` | `cube-single.mp4` | 2.534 s |
+| `media/videos/cube-double.mp4` | `cube-double.mp4` | 6.7 s |
+| `media/videos/scene.mp4` | `scene.mp4` | 5.534 s |
+
+Each video has a same-stem `.jpg` poster in `media/videos/`. These are illustrative policy rollouts; no seed, task number, dataset quality, or playback-speed claims are inferred from the filenames.

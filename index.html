@@ -64,6 +64,37 @@
 
     <section class="teaser container" aria-labelledby="teaser-title">
       <h2 id="teaser-title">Expressive offline RL with <span class="blue">support constraints</span><br class="desktop-break"> and <span class="purple">explicit entropy regularization</span>.</h2>
+      <div id="demos" class="demo-gallery" role="group" aria-label="LASER policy demonstrations">
+        <figure class="demo-video">
+          <video width="720" height="480" controls muted loop playsinline preload="metadata" poster="media/videos/antmaze-large.jpg" aria-labelledby="demo-antmaze-large">
+            <source src="media/videos/antmaze-large.mp4" type="video/mp4">
+            Your browser does not support embedded video. <a href="media/videos/antmaze-large.mp4">Download the AntMaze-large video</a>.
+          </video>
+          <figcaption id="demo-antmaze-large">AntMaze-large</figcaption>
+        </figure>
+        <figure class="demo-video">
+          <video width="720" height="480" controls muted loop playsinline preload="metadata" poster="media/videos/cube-single.jpg" aria-labelledby="demo-cube-single">
+            <source src="media/videos/cube-single.mp4" type="video/mp4">
+            Your browser does not support embedded video. <a href="media/videos/cube-single.mp4">Download the Cube-single video</a>.
+          </video>
+          <figcaption id="demo-cube-single">Cube-single</figcaption>
+        </figure>
+        <figure class="demo-video">
+          <video width="720" height="480" controls muted loop playsinline preload="metadata" poster="media/videos/cube-double.jpg" aria-labelledby="demo-cube-double">
+            <source src="media/videos/cube-double.mp4" type="video/mp4">
+            Your browser does not support embedded video. <a href="media/videos/cube-double.mp4">Download the Cube-double video</a>.
+          </video>
+          <figcaption id="demo-cube-double">Cube-double</figcaption>
+        </figure>
+        <figure class="demo-video">
+          <video width="720" height="480" controls muted loop playsinline preload="metadata" poster="media/videos/scene.jpg" aria-labelledby="demo-scene">
+            <source src="media/videos/scene.mp4" type="video/mp4">
+            Your browser does not support embedded video. <a href="media/videos/scene.mp4">Download the Scene video</a>.
+          </video>
+          <figcaption id="demo-scene">Scene</figcaption>
+        </figure>
+      </div>
+      <p class="demo-caption">LASER policies on four OGBench environments.</p>
       <figure>
         <a class="figure-link" href="media/motivation.png" data-zoom aria-label="Enlarge the reach-avoid comparison">
           <img width="1800" height="515" src="media/motivation.png" alt="Reach-avoid comparison: dataset trajectories go around a wall; removing support constraints leads to out-of-distribution failures; removing entropy regularization gets agents stuck; LASER reaches the goal." fetchpriority="high">
@@ -72,7 +103,7 @@
         <figcaption><strong>Staying in support is only part of the story.</strong> Entropy regularization helps avoid brittle policies and artifacts in the learned critic. LASER combines both ingredients in an expressive latent flow policy.</figcaption>
       </figure>
       <nav class="section-links" aria-label="On this page">
-        <a href="#overview">Overview</a><a href="#method">Method</a><a href="#results">Results</a><a href="#ablations">Ablations</a><a href="#abstract">Abstract</a>
+        <a href="#demos">Videos</a><a href="#overview">Overview</a><a href="#method">Method</a><a href="#results">Results</a><a href="#ablations">Ablations</a><a href="#abstract">Abstract</a>
       </nav>
     </section>
 
