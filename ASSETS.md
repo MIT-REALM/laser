@@ -23,6 +23,8 @@ The title, author order, affiliations, venue, abstract, and numerical results fo
 
 The HTML, CSS, and JavaScript are written for LASER. The REALM favicon (`static/images/favicon.svg` and `favicon.png`) is reused unchanged from the ReFORM project website; the same assets are also used by DGPPO. The visual structure follows the user's ReFORM, Def-MARL, DGPPO, and GCBF+ sites, which credit the Nerfies project-page template. No prior project's results or videos are reused.
 
+The arXiv button embeds the [Academicons arXiv icon](https://github.com/jpswalsh/academicons/blob/master/svg/arxiv.svg), the same icon family used by DGPPO and Def-MARL. Its original geometry is preserved and rendered in the button text color. Academicons is by James Walsh and contributors; its icon artwork is licensed under SIL OFL 1.1. See `static/images/LICENSE-academicons.txt`.
+
 Noto Sans Regular and Bold are subsetted from the local `fonts-noto-core` package into WOFF2 for offline use. See `static/fonts/LICENSE.txt` for the font license. The subset covers the site's text, Latin, Greek, and mathematical symbols where supported by the source font; remaining mathematical glyphs use system fallbacks.
 
 Manuscript PDF SHA-256: `31a5c89d2f33cb46a7db5a0f10040ddda9434d71fd394c38e4724e8c61e1ab1d`.

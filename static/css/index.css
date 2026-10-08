@@ -37,6 +37,7 @@ sup{font-size:.66em;line-height:0;vertical-align:super}
 .pill{background:var(--ink);color:#fff;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:8px 20px;border-radius:30px;line-height:1.5;transition:background .15s}
 .pill:hover{background:#191919;text-decoration:none}
 .pill svg{width:17px;height:17px}
+.pill .arxiv-icon{width:22px;height:22px;flex-shrink:0;fill:currentColor;stroke:none}
 .teaser{padding-top:26px}
 .teaser h2{font-size:clamp(23px,2.3vw,25px);text-align:center;letter-spacing:-.55px;line-height:1.4;margin:0 0 30px;text-wrap:balance}
 .blue{color:var(--blue)}

@@ -25,7 +25,7 @@ The intended project URL is <https://mit-realm.github.io/laser/>. All local link
 
 ## Updating content
 
-Replace `media/laser.pdf` and the corresponding images when the paper changes. Update the text, summary numbers, metadata, and BibTeX in `index.html` together. All LASER paper links point to the [OpenReview PDF](https://openreview.net/pdf?id=n2D2Gf0jYw). The bundled PDF is retained as a local manuscript snapshot. The Code button points to the repository and does not imply that the code has been released.
+Replace `media/laser.pdf` and the corresponding images when the paper changes. Update the text, summary numbers, metadata, and BibTeX in `index.html` together. The Paper button and appendix link point to the [OpenReview PDF](https://openreview.net/pdf?id=n2D2Gf0jYw), and the arXiv button links to [arXiv:2610.08989](https://arxiv.org/abs/2610.08989). The bundled PDF is retained as a local manuscript snapshot. The Code button points to the repository and does not imply that the code has been released.
 
 The teaser gallery contains LASER rollouts for AntMaze-large, Cube-single, Cube-double, and Scene. Videos loop silently with native playback and fullscreen controls. Autoplay is disabled for visitors who prefer reduced motion; without JavaScript, visitors can start playback using the controls. The gallery uses four columns on desktop, two on tablets, and one on phones.
 
